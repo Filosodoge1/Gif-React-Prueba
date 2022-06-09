@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { AddCategory } from "./Componentes/AddCategory";
+
 
 export const Funcion = ({value}) => {
     
@@ -22,7 +24,7 @@ export const Funcion = ({value}) => {
         <h2>GifExpertApp</h2>
         <hr />
 
-        <button onClick={bingresar}>Ingresar</button>
+        <AddCategory />
 
         <ol>
             {
