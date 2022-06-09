@@ -4,14 +4,18 @@ export const AddCategory = () => {
 
     const [first, setfirst] = useState('Hola mundo')
 
-    const funsubmit = (e) =>{
+    const insertartexto = (e) =>{
         setfirst(e.target.value);
     }
 
+    const funcsubmit = (e) => {
+        e.preventDefault();
+    }
+
   return (
-    <>
-        <input type="text" value={first} onChange={funsubmit} />
+    <form onSubmit={funcsubmit}>
+        <input type="text" value={first} onChange={insertartexto} />
         <h2> {first} </h2>
-    </>
+    </form>
   )
 }
