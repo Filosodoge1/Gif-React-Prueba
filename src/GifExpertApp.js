@@ -8,31 +8,32 @@ export const Funcion = ({value}) => {
 
     let [Categories, setCategories] = useState(['dragon ball', 'naruto', 'one piece']);
 
-    const bingresar = () => {
-        //console.log(value);
-        // setCategories([...Categories, value]);
-        // setCategories([Categories.push(value)]);
-        setCategories([...Categories, value]);
-        console.log('hola', Categories);
-    };
-    console.log(Categories);
+    // const bingresar = () => {
+    //     //console.log(value);
+    //     // setCategories([...Categories, value]);
+    //     // setCategories([Categories.push(value)]);
+    //     setCategories([...Categories, value]);
+    //     console.log('hola', Categories);
+    // };
+    // console.log(Categories);
 
     return (
         <>
         
         
-        <h2>GifExpertApp</h2>
-        <hr />
+            <h2>GifExpertApp</h2>
+            <hr />
 
-        <AddCategory />
+            {/* <AddCategory setCategories={setCategories=Categories} /> */}
+            <AddCategory setCategories={setCategories} />
 
-        <ol>
-            {
-                Categories.map(Categories => {
-                    return <li key={Categories}>{Categories}</li>
-                })
-            }
-        </ol>
+            <ol>
+                {
+                    Categories.map(Categories => {
+                        return <li key={Categories}>{Categories}</li>
+                    })
+                }
+            </ol>
 
         </>
     );
