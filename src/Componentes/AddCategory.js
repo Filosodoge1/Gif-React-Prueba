@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-export const AddCategory = ({setCategories}) => {
+export const AddCategory = ({onNewCategory}) => {
 
     // const [first, setfirst] = useState('Hola mundo');
     const [first, setfirst] = useState('');
@@ -15,7 +15,8 @@ export const AddCategory = ({setCategories}) => {
         // console.log(setCategories);
         // setCategories(cats => [...cats, first]);
         if (first.trim().length > 2) {
-            setCategories( cats => [...cats, first]);
+            // setCategories( cats => [...cats, first]);
+            onNewCategory(first.trim());
         }
     }
 
@@ -28,5 +29,5 @@ export const AddCategory = ({setCategories}) => {
 }
 
 AddCategory.propTypes = {
-    setCategories: PropTypes.func.isRequired
+    onNewCategory: PropTypes.func.isRequired
 }

@@ -8,24 +8,23 @@ export const Funcion = ({value}) => {
 
     let [Categories, setCategories] = useState(['dragon ball', 'naruto', 'one piece']);
 
-    // const bingresar = () => {
-    //     //console.log(value);
-    //     // setCategories([...Categories, value]);
-    //     // setCategories([Categories.push(value)]);
-    //     setCategories([...Categories, value]);
-    //     console.log('hola', Categories);
-    // };
+    const bingresar = (newCategory) => {
+        //console.log(value);
+        // setCategories([...Categories, value]);
+        // setCategories([Categories.push(value)]);
+        if (Categories.includes(newCategory)) return;
+        setCategories([...Categories, newCategory]);
+        console.log('hola', newCategory);
+    };
     // console.log(Categories);
 
     return (
         <>
-        
-        
             <h2>GifExpertApp</h2>
             <hr />
 
             {/* <AddCategory setCategories={setCategories=Categories} /> */}
-            <AddCategory setCategories={setCategories} />
+            <AddCategory onNewCategory={ (ca) => bingresar(ca)} />
 
             <ol>
                 {
@@ -34,7 +33,6 @@ export const Funcion = ({value}) => {
                     })
                 }
             </ol>
-
         </>
     );
 };
