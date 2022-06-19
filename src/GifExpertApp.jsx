@@ -5,7 +5,7 @@ import { GifGrid } from "./Componentes/GifGrid";
 
 export const Funcion = ({value}) => {
 
-    let [Categories, setCategories] = useState(['dragon ball', 'naruto', 'one piece']);
+    let [Categories, setCategories] = useState(['dragon ball']);
 
     const bingresar = (newCategory) => {
         if (Categories.includes(newCategory)) return;
