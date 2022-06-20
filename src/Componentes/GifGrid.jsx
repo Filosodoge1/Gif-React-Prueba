@@ -6,22 +6,36 @@ import { Gifapi } from "../helpers/getGif";
 
 
 export const GifGrid = ({category}) => {
-  
-  const [first, setfirst] = useState(10)
+  const [first, setfirst] = useState([]);
+
+  const arreglosImg = async() => {
+    const newImg = await Gifapi(category); 
+    setfirst(newImg);
+  }
 
   useEffect(() => {
-    Gifapi(category);
-  
+    arreglosImg();
   }, []);
   
+  /* OTRA FORMA DE REALIZARLO
+  useEffect(() => {
+    Gifapi(category)
+    .then( newImages => setfirst(newImages));
   
-  
+  }, []);
+  */
   return (
-    <div>
+    <>
         <h1>{category}</h1>
 
-        <h3>{first}</h3>
-        <button onClick={ () => setfirst(first+1)}>+1</button>
-    </div>
+        <ol>
+          {
+            first.map( ({id, title}) => (
+              
+              <li key={id}>{title}</li>
+            ))
+          }
+        </ol>
+    </>
   )
 }
