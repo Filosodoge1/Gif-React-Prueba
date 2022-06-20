@@ -6,7 +6,10 @@ import { Funcion } from './GifExpertApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <Funcion value={'hola'}/>
+    <React.StrictMode>
+        <Funcion value={'hola'}/>
+    </React.StrictMode>
+    
 );
 
 // If you want to start measuring performance in your app, pass a function
