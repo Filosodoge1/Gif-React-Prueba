@@ -10,4 +10,5 @@ export const Gifapi = async(gif) => {
     console.log(gifs);
 
     return gifs;
+    
   }
