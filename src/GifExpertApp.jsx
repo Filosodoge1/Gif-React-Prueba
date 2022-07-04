@@ -12,7 +12,7 @@ export const Funcion = ({value}) => {
         setCategories([...Categories, newCategory]);
         console.log('hola', newCategory);
     };
-
+    
     return (
         <>
             <h2>GifExpertApp</h2>

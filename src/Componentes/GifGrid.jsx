@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { Gifapi } from "../helpers/getGif";
+import { GifItem } from "./GifItem";
 
 
 export const GifGrid = ({category}) => {
@@ -28,14 +29,14 @@ export const GifGrid = ({category}) => {
     <>
         <h1>{category}</h1>
 
-        <ol>
+        <div className='card-grid'>
           {
-            first.map( ({id, title}) => (
+            first.map( (image) => (
               
-              <li key={id}>{title}</li>
+              <GifItem key={image.id} {...image}/>
             ))
           }
-        </ol>
+        </div>
     </>
   )
 }
