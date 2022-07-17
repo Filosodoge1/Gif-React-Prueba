@@ -8,7 +8,7 @@ import { GifItem } from "./GifItem";
 
 export const GifGrid = ({category}) => {
   const [first, setfirst] = useState([]);
-  //hello
+  //hello-s
   const arreglosImg = async() => {
     const newImg = await Gifapi(category); 
     setfirst(newImg);
