@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { AddCategory } from "./Componentes/AddCategory";
+import GifGrid from "./Componentes/GifGrid";
 
 
 export const Funcion = ({value}) => {
@@ -28,9 +29,7 @@ export const Funcion = ({value}) => {
 
             <ol>
                 {
-                    Categories.map(Categories => {
-                        return <li key={Categories}>{Categories}</li>
-                    })
+                    Categories.map(Categories => <GifGrid key={Categories} category={Categories} />)
                 }
             </ol>
         </>
