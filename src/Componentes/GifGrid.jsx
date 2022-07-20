@@ -1,6 +1,7 @@
 import React from 'react'
+import { useEffect } from 'react';
 import { useState } from 'react';
-import GifApi from '../Helpers/GifApi'
+import { GifApi } from '../Helpers/GifApi'
 
 const GifGrid = ({category}) => {
   const [first, setfirst] = useState([]);
@@ -10,9 +11,11 @@ const GifGrid = ({category}) => {
     setfirst(newImg);
   }
 
-  
+  useEffect(() => {
+    arregloImg();
+  }, []);
 
-  //GifApi(category);
+  
   return (
     <div>
         <h1>{category}</h1>
