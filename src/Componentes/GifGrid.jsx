@@ -23,8 +23,8 @@ const GifGrid = ({category}) => {
         <ol>
           {
             first.map(
-              ({id, title, images}) => (
-                <GifItem key={id} title={title} images={images.downsized_medium.url}/>
+              ({id, title, url}) => (
+                <GifItem key={id} title={title} url={url}/>
               )
             )
           }

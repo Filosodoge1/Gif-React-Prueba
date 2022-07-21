@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const GifItem = ({id, title, images}) => {
+export const GifItem = ({id, title, url}) => {
 
-    console.log({images});
+    console.log({url});
 
   return (
     <div>GifItem</div>
