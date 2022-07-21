@@ -20,7 +20,7 @@ const GifGrid = ({category}) => {
   return (
     <div>
         <h1>{category}</h1>
-        <ol>
+        <div className='card-grid'>
           {
             first.map(
               ({id, title, url}) => (
@@ -28,7 +28,7 @@ const GifGrid = ({category}) => {
               )
             )
           }
-        </ol>
+        </div>
     </div>
   )
 }

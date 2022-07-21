@@ -7,7 +7,7 @@ export const Funcion = ({value}) => {
     
     //let categories = ['dragon ball', 'naruto', 'one piece'];
 
-    let [Categories, setCategories] = useState(['dragon ball', 'naruto', 'one piece']);
+    let [Categories, setCategories] = useState(['dragon ball']);
 
     const bingresar = (newCategory) => {
         //console.log(value);
