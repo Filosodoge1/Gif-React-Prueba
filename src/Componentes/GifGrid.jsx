@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { GifApi } from '../Helpers/GifApi'
+import { GifItem } from './GifItem';
 
 const GifGrid = ({category}) => {
   const [first, setfirst] = useState([]);
@@ -22,8 +23,8 @@ const GifGrid = ({category}) => {
         <ol>
           {
             first.map(
-              ({id, title}) => (
-                <li key={id}>{title}</li>
+              ({id, title, images}) => (
+                <GifItem key={id} title={title} images={images.downsized_medium.url}/>
               )
             )
           }
