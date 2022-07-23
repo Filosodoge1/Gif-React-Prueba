@@ -11,6 +11,9 @@ const GifGrid = ({category}) => {
   return (
     <div>
         <h1>{category}</h1>
+        {
+          isLoading ? ("Cargando"):null
+        }
         <div className='card-grid'>
           {
             first.map(
