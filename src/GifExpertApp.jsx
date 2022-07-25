@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import { AddCategory } from "./Componentes/AddCategory";
-import { GifGrid } from "./Componentes/GifGrid";
+
+import { AddCategory, GifGrid } from './Componentes';
+
+// import { AddCategory } from "./Componentes/AddCategory";
+// import { GifGrid } from "./Componentes/GifGrid";
 
 
 export const Funcion = ({value}) => {

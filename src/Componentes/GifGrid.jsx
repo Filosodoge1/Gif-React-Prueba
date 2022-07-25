@@ -1,22 +1,19 @@
 // import React from 'react'
 
-import { useState } from "react";
-import { useEffect } from "react";
-import { Gifapi } from "../helpers/getGif";
+// import { useState } from "react";
+// import { useEffect } from "react";
+// import { Gifapi } from "../helpers/getGif";
+import { useFetchGifs } from "../hooks/useFetchGifs";
 import { GifItem } from "./GifItem";
 
 
 export const GifGrid = ({category}) => {
-  const [first, setfirst] = useState([]);
+  
+  const {image, isLoading} = useFetchGifs(category);
+  
+  // const [first, setfirst] = useState([]);
 
-  const arreglosImg = async() => {
-    const newImg = await Gifapi(category); 
-    setfirst(newImg);
-  }
-
-  useEffect(() => {
-    arreglosImg();
-  }, []);
+  
   
   /* OTRA FORMA DE REALIZARLO
   useEffect(() => {
@@ -29,11 +26,19 @@ export const GifGrid = ({category}) => {
     <>
         <h1>{category}</h1>
 
+        {/* {
+          isLoading ? <h2>Cargando...</h2>:null
+        } */}
+
+        {
+          isLoading && (<h2>Cargando...</h2>)
+        }
+
         <div className='card-grid'>
           {
-            first.map( (image) => (
+            image.map( (imagen) => (
               
-              <GifItem key={image.id} {...image}/>
+              <GifItem key={imagen.id} {...imagen}/>
             ))
           }
         </div>
