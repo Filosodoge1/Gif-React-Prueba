@@ -1,27 +1,47 @@
 // import React from 'react'
 
-import { useState } from "react";
-import { useEffect } from "react";
-import { Gifapi } from "../helpers/getGif";
+// import { useState } from "react";
+// import { useEffect } from "react";
+// import { Gifapi } from "../helpers/getGif";
+import { useFetchGifs } from "../hooks/useFetchGifs";
+import { GifItem } from "./GifItem";
 
 
 export const GifGrid = ({category}) => {
   
-  const [first, setfirst] = useState(10)
+  const {image, isLoading} = useFetchGifs(category);
+  
+  // const [first, setfirst] = useState([]);
 
+  
+  
+  /* OTRA FORMA DE REALIZARLO
   useEffect(() => {
-    Gifapi(category);
+    Gifapi(category)
+    .then( newImages => setfirst(newImages));
   
   }, []);
-  
-  
-  
+  */
   return (
-    <div>
+    <>
         <h1>{category}</h1>
 
-        <h3>{first}</h3>
-        <button onClick={ () => setfirst(first+1)}>+1</button>
-    </div>
+        {/* {
+          isLoading ? <h2>Cargando...</h2>:null
+        } */}
+
+        {
+          isLoading && (<h2>Cargando...</h2>)
+        }
+
+        <div className='card-grid'>
+          {
+            image.map( (imagen) => (
+              
+              <GifItem key={imagen.id} {...imagen}/>
+            ))
+          }
+        </div>
+    </>
   )
 }
